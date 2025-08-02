@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    color: #333;
+    padding: 0;
+    background-color: #f4f4f4; /* Колір для боків */
+}
+
+/* ЗМІНА: Ось новий клас для фону */
+.parallax-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    background-image: url('https://i.pinimg.com/1200x/c6/84/d1/c684d157f097ed0baceece431185b543.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+    z-index: -1;
+}
+
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px 40px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #0056b3;
+}
+
+h2 {
+    font-size: 1.8em;
+    border-bottom: 2px solid #0056b3;
+    padding-bottom: 10px;
+    margin-top: 40px;
+}
+
+h3 {
+    font-size: 1.4em;
+    color: #555;
+    margin-top: 30px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+thead {
+    background-color: #0056b3;
+    color: white;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
