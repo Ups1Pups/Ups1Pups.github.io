@@ -1,13 +1,20 @@
+:root {
+    --primary-color: #0056b3;
+    --text-color: #333;
+    --background-color: #f4f4f4;
+    --card-bg-color: rgba(255, 255, 255, 0.7);
+    --header-footer-bg-color: rgba(240, 240, 240, 0.9);
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
-    color: #333;
+    color: var(--text-color);
     padding: 0;
-    background-color: #f4f4f4; /* Колір для боків */
+    background-color: var(--background-color);
 }
 
-/* ЗМІНА: Ось новий клас для фону */
 .parallax-bg {
     position: fixed;
     top: 0;
@@ -28,26 +35,34 @@ main {
     max-width: 900px;
     margin: 20px auto;
     padding: 20px 40px;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: var(--card-bg-color);
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 1;
 }
 
-header {
+header, footer {
+    background-color: var(--header-footer-bg-color);
+    padding: 20px 40px;
     text-align: center;
-    margin-bottom: 40px;
+    border-radius: 8px 8px 0 0;
+}
+
+footer {
+    border-radius: 0 0 8px 8px;
+    margin-top: 20px;
 }
 
 h1 {
     font-size: 2.5em;
-    color: #0056b3;
+    color: var(--primary-color);
+    margin-bottom: 0.5em;
 }
 
 h2 {
     font-size: 1.8em;
-    border-bottom: 2px solid #0056b3;
+    border-bottom: 2px solid var(--primary-color);
     padding-bottom: 10px;
     margin-top: 40px;
 }
@@ -73,7 +88,7 @@ table {
 }
 
 thead {
-    background-color: #0056b3;
+    background-color: var(--primary-color);
     color: white;
 }
 
@@ -85,4 +100,76 @@ th, td {
 
 tbody tr:nth-child(even) {
     background-color: #f9f9f9;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.5em;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+.back-to-top:hover {
+    background-color: #004494;
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+    main {
+        margin: 10px;
+        padding: 10px 20px;
+    }
+    
+    header, footer {
+        padding: 10px 20px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    tr {
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+    }
+    
+    td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+    }
+    
+    td:before {
+        position: absolute;
+        left: 6px;
+        content: attr(data-label);
+        font-weight: bold;
+        text-transform: uppercase;
+    }
 }
